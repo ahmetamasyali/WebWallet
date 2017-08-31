@@ -1,0 +1,12 @@
+com\kahveci\controller\CartControllerTest.class
+com\kahveci\service\CartServiceImplTest.class
+com\kahveci\service\DrinkServiceImplTest.class
+com\kahveci\controller\DrinkControllerTest.class
+com\kahveci\service\OrderServiceImplTest.class
+com\kahveci\service\UserServiceImplTest.class
+com\kahveci\controller\AuthControllerTest.class
+com\kahveci\controller\PaymentControllerTest.class
+com\kahveci\service\DiscountServiceImplTest.class
+com\kahveci\service\AdditionServiceImplTest.class
+com\kahveci\service\AuthtenticationServiceImplTest.class
+com\kahveci\service\PaymentInfoServiceTest.class

@@ -1,0 +1,90 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><strong>Web Wallet</strong></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class=""><a type="btn" ng-show="!isLoggedIn" class="btn "
+					href="login"> <span class="glyphicon glyphicon-share-alt"></span>Login
+				</a></li>
+
+
+				<li style="margin-left: 60px; margin-top: 15px;"><strong
+					class="pull-right" style="margin-right: 30px">{{username}}</strong></li>
+
+				<li ng-show="isLoggedIn" style="margin-left: 100px"><a
+					type="button" class="btn " ng-click="logout()"> <span
+						class="glyphicon glyphicon-share-alt"></span>Logout
+				</a></li>
+			</ul>
+
+		</div>
+	</div>
+</nav>
+<!-- /.navbar-collapse -->
+<div class="container" style="margin-top: 100px">
+
+	<h3>
+		<strong> Bitcoin Amount : {{bitcoinAmount}} <br> <br>
+			Bitcoin Address : {{bitcoinAddress}} <br> <br> Send Btc :
+
+			<div>
+				<div class="col-sm-2">Amount</div>
+				<div class="col-sm-3">
+					<input name="quantity" class="form-control input-sm"
+						ng-model="btcToSend">
+				</div>
+
+				<div class="col-sm-2">Address</div>
+				<div class="col-sm-3">
+					<input name="quantity" class="form-control input-sm"
+						ng-model="sendAddress">
+				</div>
+				<div class="col-sm-2">
+					<button type="button" class="btn btn-success btn-block"
+						ng-click="sendBtc()"
+						ng-disabled="!sendAddress || !btcToSend">Send</button>
+				</div>
+			</div>
+		</strong>
+	</h3>
+	<br> <br>
+	<h2>Transactions :</h2>
+	<div class="panel-body">
+		<table class="table table-striped table-bordered table-list">
+			<thead>
+				<tr>
+
+					<th class="hidden-xs">From</th>
+					<th>To</th>
+					<th>Transaction Date</th>
+					<th>Status</th>
+					<th>Bitcoin Amount</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in transactions ">
+
+					<td>{{item.fromUser.bitcoinAddress}} {{item.fromAddress}}</td>
+					<td>{{item.toUser.bitcoinAddress}}</td>
+					<td>{{item.transactionDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+					<td>{{item.status}}</td>
+					<td>{{item.bitcoinAmount}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+</div>
